@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='images/program.png') }}" />
     <!--DE ESTA MANERA SE PUEDE ENCONTRAR UN CSS DE LOS ARCHIVOS-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <!--EXTRACCIÓN DE BULMA A TRA VEZ DE CDN-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <title>Python Sitio web</title>
+    <script src="https://kit.fontawesome.com/2828f7885a.js" integrity="sha384-WAsFbnLEQcpCk8lM1UTWesAf5rGTCvb2Y+8LvyjAAcxK1c3s5c0L+SYOgxvc6PWG" crossorigin="anonymous"></script>
+    <title>My Personal Site</title>
 </head>
 
 
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <!--<nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="/">
                 <img src="http://1000marcas.net/wp-content/uploads/2020/11/Python-logo.png" width="112" height="28">
@@ -51,10 +53,26 @@
                 </div>
             </div>
         </div>
-    </nav>
-    <div class="container">
-        {% block content %} {% endblock %}
+    </nav>-->
+    {% block content %} {% endblock %}
+    <div class="footer">
+        <p>
+            <strong class="white">Bulma</strong> by <a href="http://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content is licensed
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+        </p>
     </div>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            easing: "ease-out",
+            duration: 800,
+        });
+    </script>
 </body>
 
 </html>
